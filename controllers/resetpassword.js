@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const Forgotpassword = require("../models/forgotPassword");
 const User = require("../models/user");
 const express = require('express');
-const { Script } = require('vm');
+// const { Script } = require('vm');
 const e = require('express');
 const forgotpassword=async(req,res)=>{
     try{
