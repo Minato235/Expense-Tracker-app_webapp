@@ -5,22 +5,18 @@ const cors = require('cors');
 const app = express();
 const https=require("https") 
 const fs=require("fs")
-var aws = require("aws-sdk");
-const helmet = require("helmet");
-var compression = require('compression')
-var morgan = require('morgan')
+// const helmet = require("helmet");
 
 app.use(cors());
 app.use(express.json());
-app.use(helmet());
-app.use(compression())
+
 
 const User=require("./models/user");
 const Expense=require("./models/expenses");
 const Orders=require("./models/orders");
-const accesLOg=fs.createWriteStream(path.join(__dirname,"access.log"),{flag:"a"});
+// const accesLOg=fs.createWriteStream(path.join(__dirname,"access.log"),{flag:"a"});
 const ForgotPassword=require("./models/forgotPassword")
-app.use(morgan("combined",{stream:accesLOg}));
+// app.use(morgan("combined",{stream:accesLOg}));
 
 
  
