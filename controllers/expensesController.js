@@ -1,6 +1,6 @@
 const Expense = require("../models/expenses");
 const jwt = require("jsonwebtoken");
-// var aws = require("aws-sdk");
+var aws = require("aws-sdk");
 const servicesUser=require("../services/userServices")
 const { resolve } = require("path");
 const uploadToS3=require("../services/uploadToS3");

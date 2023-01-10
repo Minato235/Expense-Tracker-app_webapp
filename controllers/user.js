@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const bcyrpt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-// var aws = require("aws-sdk");
+var aws = require("aws-sdk");
 
 
 exports.addUser = async (req, res) => {
