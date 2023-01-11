@@ -10,8 +10,6 @@ const restetPassword=require("../controllers/resetpassword");
 
 router.post("/user/login",addUsers.addUser);
 router.post("/user/login1",addUsers.login);
-router.get("",restetPassword.resetpassword)
-
 router.get("/user/download",middleware.authorization,expensesController.downloadpage)
-
+router.delete("/expense/expenseDetails/:id",addUsers.deleteUser)
     module.exports=router;

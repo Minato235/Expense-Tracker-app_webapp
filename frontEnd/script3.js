@@ -94,22 +94,27 @@ function displayUserLog(user) {
   parentNode.innerHTML = parentNode.innerHTML + childHTML;
 }
 
-async function deleteExistingUser(user_id) {
+async function deleteExistingUser(userId) {
+  console.log("in deleteExistingUser")
   try {
-    const reqId = await axios.delete(`http://localhost:3000/expense/expenseDetails/${user_id}`);
-
-    deleteUser(user_id);
+    const reqId = await axios.delete(`http://localhost:3000/expense/expenseDetails/${userId}`);
+    console.log(reqId)
+    deleteUser(userId);
   } catch (error) {
     console.log('404 error');
   }
 }
 
-function deleteUser(id) {
+function deleteUser(userId) {
   const parentNode = document.getElementById('items');
-  const childNodeToBeDeleted = document.getElementById(id);
-  if (childNodeToBeDeleted) {
-    parentNode.removeChild(childNodeToBeDeleted);
-  }
+  const elem = document.getElementById(userId)
+  parentNode.removeChild(elem);
+  // const parentNode = document.getElementById('expenseList');
+  // const childNodeToBeDeleted = document.getElementById(id);
+  // console.log(childNodeToBeDeleted)
+  // if (childNodeToBeDeleted) {
+  //   parentNode.removeChild(childNodeToBeDeleted);
+  // }
 }
 
 function editUserDetails(money, description, user_id) {

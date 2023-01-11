@@ -57,7 +57,7 @@ exports.getExpenses = async (req, res) => {
     console.log("count"+"id==>"+count)
     totalPages=count;
     let data=await req.user.getExpenses({offset:(page-1)*items_per_page,limit:items_per_page})
-    console.log(data)
+    // console.log(data)
     res.status(200).json({
       data,
       info:{

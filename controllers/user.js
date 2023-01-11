@@ -73,3 +73,28 @@ exports.login = async (req, res) => {
     }
 
 }
+ exports.deleteUser = async (req, res, next) => {
+
+    try {
+        let userId = req.params.id;
+        console.log(userId)
+        if (!userId) {
+            res.status(400).json({
+                err: 'Id missing!!'
+            })
+        }
+        await User.destroy({
+            where: {
+                id: userId
+            }
+        });
+        console.log('delete working');
+
+        res.sendStatus(200);
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            err: 'isErrored deletete section'
+        })
+    }
+}
